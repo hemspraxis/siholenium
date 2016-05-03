@@ -18,7 +18,7 @@ import static com.praxis.siho.test.common.constants.GroupsConstants.*;
  */
 public class RentabilidadSmokeTest extends WebDriverSetup {
 
-    @Test(enabled = false, priority = 1, groups = {SMOKE, RENTABILIDAD}, dataProviderClass = SmokeTestDP.class, dataProvider = "SIGNON_RENTABILIDAD")
+    @Test(enabled = true, priority = 1, groups = {SMOKE, RENTABILIDAD}, dataProviderClass = SmokeTestDP.class, dataProvider = "SIGNON_RENTABILIDAD")
     public void signOn(String credential, String password) {
         LogInPage logInPage = new LogInPage(driver).refreshPage();
         System.out.println("after instanciating login page: " + logInPage);
@@ -29,7 +29,7 @@ public class RentabilidadSmokeTest extends WebDriverSetup {
        	System.out.println("---------------SIGN ON COMPLETE---------------------");
     }
 
-    @Test(enabled = false, priority = 2, groups = {SMOKE, RENTABILIDAD})
+    @Test(enabled = true, priority = 2, groups = {SMOKE, RENTABILIDAD})
     public void casoAgregarControlCambios(){
     	testCase("agregarControlCambios");
         MainPage mainPage = new MainPage(driver).refreshPage();
@@ -44,7 +44,7 @@ public class RentabilidadSmokeTest extends WebDriverSetup {
        	System.out.println("----------------CASO AGREGAR CONTROL CAMBIOS COMPLETE---------------------");
     }
     
-    @Test(enabled = false, priority = 3, groups = {SMOKE, RENTABILIDAD})
+    @Test(enabled = true, priority = 3, groups = {SMOKE, RENTABILIDAD})
     public void casoConsultarRentabilidadProyecto(){
     	testCase("consultarRentabilidadProyecto");
         MainPage mainPage = new MainPage(driver).refreshPage();

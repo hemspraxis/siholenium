@@ -43,7 +43,7 @@ public class MainPage extends Page<MainPage>{
 	@FindBy(how = How.LINK_TEXT, using = "Tipo de Asignación")
 	private WebElement asgTipoAsignacion;
 
-	@FindBy(how = How.LINK_TEXT, using = "Línea Tecnológica")
+	@FindBy(how = How.LINK_TEXT, using = "Linea Tecnológica")
 	private WebElement asgLineaTecnologica;
 
 	@FindBy(how = How.LINK_TEXT, using = "Próximos a Desasignarse")
@@ -59,7 +59,7 @@ public class MainPage extends Page<MainPage>{
 	@FindBy(how = How.LINK_TEXT, using = "Administración de Actividades")
 	private WebElement parentNodeAdmActividades;
 
-	@FindBy(how = How.LINK_TEXT, using = "Cátalogo")
+	@FindBy(how = How.LINK_TEXT, using = "Catálogo")
 	private WebElement catalogoActividades;
 
 	@FindBy(how = How.LINK_TEXT, using = "Asignar Catálogo a Proyecto")
@@ -267,7 +267,7 @@ public class MainPage extends Page<MainPage>{
 
 	public ControlCambiosPage linkToControlCambiosPage(){
 		Actions action = new Actions(driver);
-		action.moveToElement(parentNodeRentabilidad).perform();
+		action.moveToElement(parentNodeCatalogoProyectos).perform();
 		action.moveToElement(controlCambios).click().perform();
 		return new ControlCambiosPage(driver).loadPage();
 	}

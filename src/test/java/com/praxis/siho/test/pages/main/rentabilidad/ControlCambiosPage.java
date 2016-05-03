@@ -31,7 +31,7 @@ public class ControlCambiosPage extends Page<ControlCambiosPage> {
     @FindBy(how = How.ID, using = "formConsultaControlCambios:j_idt52")
     private  WebElement eliminarBtn;
 
-    @FindBy(how = How.ID, using = "formNuevoControlDeCambios:j_idt90")
+    @FindBy(how = How.ID, using = "formNuevoControlDeCambios:j_idt91")
     private WebElement guardarBtn;
 
     @FindBy(how = How.ID, using = "formNuevoControlDeCambios:j_idt96")
@@ -88,8 +88,11 @@ public class ControlCambiosPage extends Page<ControlCambiosPage> {
     @FindBy(how = How.ID, using = "formNuevoControlDeCambios:input_CostoHora_input")
     private WebElement costoHoraTxt;
 
-    @FindBy(how = How.XPATH, using = "//*[@id=\"formNuevoControlDeCambios:calendar_FechaProgramada\"]/button/span[1]")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"formNuevoControlDeCambios:calendar_FechaRI\"]/button/span[1]")
     private WebElement pickCalendarStarter;
+    
+    @FindBy(how = How.XPATH, using = "//*[@id=\"formNuevoControlDeCambios:calendar_FechaProgramada\"]/button/span[1]")
+    private WebElement pickCalendarStarter2;
     
     @FindBy(how = How.ID, using = "ui-datepicker-div")
     private  WebElement uiDatepickerDiv;
@@ -112,6 +115,24 @@ public class ControlCambiosPage extends Page<ControlCambiosPage> {
     @FindBy(how = How.ID, using = "j_idt24")
     private WebElement modalLayer;
     
+    @FindBy(how = How.ID, using = "formNuevoControlDeCambios:input_Rol")
+    private WebElement rolTxt;
+    
+    @FindBy(how = How.ID, using = "formNuevoControlDeCambios:selectOneMenu_Prioridad_label")
+    private WebElement cvePrioridadLstLabel;
+    
+    @FindBy(how = How.XPATH, using = "//*[@id=\"formNuevoControlDeCambios:selectOneMenu_Prioridad_panel\"]/div/ul/li[3]")
+    private WebElement cvePrioridadOption;
+    
+    @FindBy(how = How.ID, using = "formNuevoControlDeCambios:selectOneMenu_RModificacion_label")
+    private WebElement cveModifLstLabel;
+    
+    @FindBy(how = How.XPATH, using = "//*[@id=\"formNuevoControlDeCambios:selectOneMenu_RModificacion_panel\"]/div/ul/li[3]")
+    private WebElement cveModifOption;
+    
+    @FindBy(how = How.XPATH, using = "//*[@id=\"formNuevoControlDeCambios:selectOneRadio_RePlaneacion\"]/tbody/tr/td[3]/div/div[2]/span")
+    private WebElement replanBtn;
+    
     @FindBy(how = How.ID, using = "formNuevoControlDeCambios:selectOneMenu_Proyecto_label")
     private WebElement proyectoLstLabel;
     private String proyectoXpath = "//*[@id=\"formNuevoControlDeCambios:selectOneMenu_Proyecto_panel\"]/div/ul/li[5]";
@@ -130,17 +151,25 @@ public class ControlCambiosPage extends Page<ControlCambiosPage> {
 	        Thread.sleep(1000);
 	        safeSendKeys(faseTxt,     "Sprint 2");
 	        safeSendKeys(nombreTxt,   "Susana Castañeda");
+	        safeSendKeys(rolTxt, "AP");
 	        safeSendKeys(areaTxt,     "SCVI");
 	        safeSendKeys(telefonoTxt, "50800048");
 	        safeSendKeys(emailTxt,    "cafl@praxis.com.mx");
 	        safeSendKeys(descripcionTxt,   "Se requiere agregar la funcionalidad del Módulo de Rentabilidad de Cursos Actualización al Catálogo de Proyectos para que pueda  capturarse la información necesaria para que opere  la Rentabilidad de Cursos");
 	        safeSendKeys(justificacionTxt, "En el catálogo de proyectos  se tiene actualmente la información de Proyectos y Cursos mezclada. Es necesario que a partir del  tipo de venta  se  genere la rentabilidad correspondiente.  Para ello es necesario agregar los campos   Curso, Tipo de curso, Total de horas, Participantes cobrados, Número de sesiones y Horas por sesión , así como desarrollar el módulo de Rentabilidad de Cursos..");
+	        
+	        safeSelectOptionOnPrimefacesList(cvePrioridadLstLabel, cvePrioridadOption);
+	        safeSelectOptionOnPrimefacesList(cveModifLstLabel, cveModifOption);
+	        setDateOnPicker(pickCalendarStarter, uiDatepickerDiv, "19", "10", "2018");
+	        
 	        WebElement tecCheck        = navigateForWebElement(tipoCambio, "tbody:0", "tr:0", "td:0", "div:0", "div:1", "span:0");
 	        WebElement functionalCheck = navigateForWebElement(tipoCambio, "tbody:0", "tr:0", "td:2", "div:0", "div:1", "span:0");
 	        WebElement tiempoCheck     = navigateForWebElement(tipoCambio, "tbody:0", "tr:0", "td:4", "div:0", "div:1", "span:0");
 	        WebElement costoCheck      = navigateForWebElement(tipoCambio, "tbody:0", "tr:0", "td:6", "div:0", "div:1", "span:0");
 	        safeClick(functionalCheck);
 	        safeClick(costoCheck);
+	        
+	        safeClick(replanBtn);
 	        safeSendKeys(reqNumNuevos, "0");
 	        safeSendKeys(reqNumAfectados, "3");
 	        safeSendKeys(prodNumNuevos, "4");
@@ -149,7 +178,7 @@ public class ControlCambiosPage extends Page<ControlCambiosPage> {
 	        safeSendKeys(costoHoraTxt, "112.69");
 	        safeSendKeys(ingresoAdicionalTxt, "43908.18");
 	        safeClick(factClSiRadio);
-	        setDateOnPicker(pickCalendarStarter, uiDatepickerDiv, "19", "10", "2023");
+	        setDateOnPicker(pickCalendarStarter2, uiDatepickerDiv, "19", "10", "2023");
 	        safeSendKeys(directorGeneralTxt, "Elsa Ramirez");
 	        Thread.sleep(1000);
 	        scrollUpOrDown(-3000);
