@@ -114,10 +114,10 @@ public class MainPage extends Page<MainPage>{
 	@FindBy(how = How.LINK_TEXT, using = "PSP")
 	private WebElement parentNodePSP;
 
-	@FindBy(how = How.LINK_TEXT, using = "Catálogos Estimación Tamaño")
+	@FindBy(how = How.LINK_TEXT, using = "Catálogos Estimación tamaño")
 	private WebElement nodeEstimacionTamanio;
 
-	@FindBy(how = How.LINK_TEXT, using = "Configuración de Proyectos")
+	@FindBy(how = How.LINK_TEXT, using = "Configuración de proyectos")
 	private WebElement configuracionProyectos;
 
 	@FindBy(how = How.LINK_TEXT, using = "Estimación de Tamaño")
@@ -150,7 +150,7 @@ public class MainPage extends Page<MainPage>{
 	@FindBy(how = How.LINK_TEXT, using = "Catálogos")
 	private WebElement nodeCatPSP;
 
-	@FindBy(how = How.LINK_TEXT, using = "Catálogo Tipo de Medida")
+	@FindBy(how = How.LINK_TEXT, using = "Catálogo Tipo de medida")
 	private WebElement catTipoMedida;
 
 	@FindBy(how = How.LINK_TEXT, using = "Catálogo Tipo de Funcionalidad")
