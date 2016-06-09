@@ -5,7 +5,7 @@
 	   <listener class-name="org.uncommons.reportng.HTMLReporter" />
 	</listeners>
 
- 	<!-- <test name="ACTIVIDADES_SMOKE">
+ 	<test name="ACTIVIDADES_SMOKE">
 		<classes>
 			<class name="com.praxis.siho.test.smoke.ModuloActividadesSmokeTest" />
 		</classes>
@@ -35,7 +35,7 @@
  			<class name="com.praxis.siho.test.smoke.PspSmokeTest" >
  			</class>
  		</classes>
- 	</test> -->
+ 	</test>
 
 	<test name="HORARIOS_SMOKE">
 		<classes>
